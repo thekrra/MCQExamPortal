@@ -1,0 +1,112 @@
+﻿
+
+    
+
+.back-button {
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%); /* Center button vertically */
+    width: 30px; /* Width of the arrow */
+    height: 30px; /* Height of the arrow */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+    .back-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: translate(-50%, -50%) rotate(135deg);
+        -webkit-transform: translate(-50%, -50%) rotate(135deg);
+    }
+
+    
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('/fonts/HelveticaNeue.woff2') format('woff2'), url('/fonts/secondFont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 
+body {
+    padding-top: 8%;
+    padding-bottom: 5%;
+    text-align: center;
+    font-family: 'HelveticaNeue', Arial, sans-serif;
+}
+    */
+
+
+/* Fixed frame with  Logo     */
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+        padding: 10px 0;
+        align-items: center;
+
+} 
+
+
+/* register button*/
+
+
+/* Login button */
+
+
+
+.logout-button {
+    background-color: transparent; /* Transparent background */
+    color: #0787C6; /* Blue text */
+    padding: 8px 16px; /* Padding around the text */
+    border: 2px solid #0787C6; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 12px; /* Larger font size */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+    cursor: pointer; /* Change mouse pointer to indicate clickable */
+    display: inline-block; /* Allows the button to have padding and margin */
+    text-decoration: none; /* Remove underline from the text */
+}
+
+    .logout-button:hover, .logout-button:focus {
+        background-color: #0787C6; /* Blue background on hover/focus */
+        color: white; /* White text on hover/focus */
+        border-color: #0787C6; /* Keep blue border on hover/focus */
+    }
+
+
+
+
+
+/* the thank you screen after the exam ( result.aspx ) */
+
+.form-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.check-mark {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
