@@ -37,9 +37,25 @@ namespace MCQExamPortal
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                // Quizzes available for the student to take
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+                // Hide the message if quizzes are available
+                lblMessage.Visible = false;
+            }
+            else
+            {
+                // No quizzes available - student has taken all available quizzes
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+                // Show a message indicating the student has already taken the quiz
+                lblMessage.Visible = true;
+                lblMessage.Text = "You have already taken the available assessment";
+            }
         }
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {

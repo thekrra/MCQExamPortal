@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Students Results</title>
+        <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +32,7 @@
  
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
         .container {
@@ -80,7 +82,9 @@
 </head>
 <body>
     <div class="fixed-header">
-        <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+        <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
+                    <button onclick="history.back()" class="back-button"><i ></i></button>
+
     </div>
     <div class="container">
         <div class="panel-header">Students Results</div>

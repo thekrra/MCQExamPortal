@@ -60,15 +60,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// lblerroremail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerroremail;
-
-        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -78,15 +69,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// lblerrorpassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerrorpassword;
-
-        /// <summary>
         /// txtPhone control.
         /// </summary>
         /// <remarks>
@@ -94,15 +76,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
-
-        /// <summary>
-        /// lblerrorphone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerrorphone;
 
         /// <summary>
         /// male control.
@@ -123,13 +96,13 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.RadioButton female;
 
         /// <summary>
-        /// lblErrorGender control.
+        /// CustomValidatorGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorGender;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorGender;
 
         /// <summary>
         /// txtBirthDate control.
@@ -141,13 +114,13 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtBirthDate;
 
         /// <summary>
-        /// lblErrorMessage control.
+        /// regexBirthDateValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexBirthDateValidator;
 
         /// <summary>
         /// txtCity control.
@@ -159,15 +132,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtCity;
 
         /// <summary>
-        /// lblerrorcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerrorcity;
-
-        /// <summary>
         /// txtUniversity control.
         /// </summary>
         /// <remarks>
@@ -175,15 +139,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUniversity;
-
-        /// <summary>
-        /// erroruniversity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label erroruniversity;
 
         /// <summary>
         /// txtMajor control.
@@ -195,15 +150,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtMajor;
 
         /// <summary>
-        /// errormajor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errormajor;
-
-        /// <summary>
         /// txtGrad control.
         /// </summary>
         /// <remarks>
@@ -211,15 +157,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGrad;
-
-        /// <summary>
-        /// errorGrad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorGrad;
 
         /// <summary>
         /// txtGPA control.
@@ -231,15 +168,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.TextBox txtGPA;
 
         /// <summary>
-        /// errorGPA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorGPA;
-
-        /// <summary>
         /// fuCV control.
         /// </summary>
         /// <remarks>
@@ -247,15 +175,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuCV;
-
-        /// <summary>
-        /// errorcv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorcv;
 
         /// <summary>
         /// fuVideo control.
@@ -267,15 +186,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.FileUpload fuVideo;
 
         /// <summary>
-        /// errorvideo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorvideo;
-
-        /// <summary>
         /// fuTranscript control.
         /// </summary>
         /// <remarks>
@@ -283,15 +193,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuTranscript;
-
-        /// <summary>
-        /// errorAT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorAT;
 
         /// <summary>
         /// fuPhoto control.
@@ -303,15 +204,6 @@ namespace MCQExamPortal
         protected global::System.Web.UI.WebControls.FileUpload fuPhoto;
 
         /// <summary>
-        /// errorPhoto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorPhoto;
-
-        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>
@@ -319,15 +211,6 @@ namespace MCQExamPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
-
-        /// <summary>
-        /// Label7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
         /// Label2 control.

@@ -6,7 +6,6 @@
 <head runat="server">
     <title>SBM Academy Admin Home Page</title>
            <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     
     
@@ -74,7 +73,7 @@
  
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
 
@@ -84,7 +83,7 @@
 <body>
 
     <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+    <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
 
 </div>
 
@@ -103,5 +102,9 @@
             <asp:Button ID="Button6" runat="server" Text="Logout" CssClass="app-button logout-button" OnClick="Button6_Click" />
         </div>
     </form>
+
+         
+
+
 </body>
 </html>

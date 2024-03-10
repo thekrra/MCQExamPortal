@@ -20,7 +20,7 @@ namespace MCQExamPortal
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
-
+          
 
             try
             {
@@ -48,20 +48,17 @@ namespace MCQExamPortal
                         else
                             cmd.Parameters.AddWithValue("@gender", "Female");
 
-                        DateTime BirthDate;
-                        if (DateTime.TryParseExact(txtBirthDate.Text, "dd/MM/yyyy",
-                            CultureInfo.InvariantCulture, DateTimeStyles.None, out BirthDate))
-                        {
-                            cmd.Parameters.AddWithValue("@BirthDate", BirthDate);
-                            lblErrorMessage.Visible = false;
 
-                        }
-                        else
-                        {
-                            lblErrorMessage.Visible = true;
-                            lblErrorMessage.Text = "The birth date entered is invalid. Please enter the date in the format DD/MM/YYYY.";
-                            return;  // Stop further execution if validation fails
-                        }
+                        
+                        DateTime BirthDate;
+                        if (!DateTime.TryParseExact(txtBirthDate.Text, "dd/MM/yyyy",
+                            CultureInfo.InvariantCulture, DateTimeStyles.None, out BirthDate))
+                        
+                            return;
+                        
+                        else 
+                            cmd.Parameters.AddWithValue("@BirthDate", BirthDate);
+
 
                         cmd.Parameters.AddWithValue("@City", txtCity.Text);
                         cmd.Parameters.AddWithValue("@University", txtUniversity.Text);
@@ -73,19 +70,6 @@ namespace MCQExamPortal
 
 
                         string cvPath = SaveFileAndGetPath(fuCV);
-                        if (string.IsNullOrEmpty(cvPath))
-                        {
-                            // Handle save error (e.g., display a message to the user)
-                            errorcv.Text = "Error saving CV. Please try again.";
-                            errorcv.Visible = true;
-                            return; // Stop further processing due to the error
-                        }
-
-
-
-
-
-
                         string videoPath = SaveFileAndGetPath(fuVideo);
                         string transcriptPath = SaveFileAndGetPath(fuTranscript);
                         string photoPath = SaveFileAndGetPath(fuPhoto);
@@ -103,7 +87,7 @@ namespace MCQExamPortal
                 Label2.Text = "You’ve registered! <br /> What now? Take a breath and login to do the assessment.";
                 Label2.ForeColor = System.Drawing.Color.Green;
 
-                string script = "setTimeout(function() { window.location.href = 'Student_reg_login.aspx'; }, 10000);";
+                string script = "setTimeout(function() { window.location.href = 'Student_reg_login.aspx'; }, 5000);";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "redirectScript", script, true);
             }  
             catch (Exception ex)
@@ -114,12 +98,20 @@ namespace MCQExamPortal
         }
 
 
+        
+        protected void CustomValidatorGender_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            // Validate that either the male or female radio button is selected
+            args.IsValid = male.Checked || female.Checked;
+        }
+
+
         private string SaveFileAndGetPath(FileUpload fileUpload)
         {
             if (fileUpload.HasFile)
             {
                 // Specify the directory where you want to save the files
-                string uploadDirectory = Server.MapPath("~/Uploads/");
+                string uploadDirectory = Server.MapPath("~/Upload/");
                 string fileName = Guid.NewGuid().ToString() + "_" + fileUpload.FileName;
                 string filePath = System.IO.Path.Combine(uploadDirectory, fileName);
 

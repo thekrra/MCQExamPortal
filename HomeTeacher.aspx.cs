@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,6 +20,7 @@ namespace MCQExamPortal
                     string teacherEmail = Session["temail"].ToString();
                     string teacherId = Session["id"].ToString();
 
+
                 }
                 else
                 {
@@ -30,6 +32,9 @@ namespace MCQExamPortal
 
 
 
+     
+
+  
 
         protected void Button1_Click(object sender, EventArgs e)
         {

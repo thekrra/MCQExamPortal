@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Edit Quiz Page</title>
+        <link rel="stylesheet" href="style.css">
+
     <style type="text/css">
 
                                                 .fixed-header {
@@ -24,7 +26,7 @@
  
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
 
@@ -107,7 +109,9 @@
 <body>
 
     <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+    <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
+        <button onclick="history.back()" class="back-button"><i ></i></button>
+
 </div>
     <form id="form1" runat="server">
        

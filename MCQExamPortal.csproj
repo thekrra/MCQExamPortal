@@ -128,8 +128,8 @@
     <Content Include="Global.asax" />
     <Content Include="HomeTeacher.aspx" />
     <Content Include="images\green-check.png" />
-    <Content Include="images\logo.jpg" />
     <Content Include="images\sbm-logo.jpg" />
+    <Content Include="images\sbmacademylogo.png" />
     <Content Include="images\sbmweb-img.png" />
     <Content Include="result.aspx" />
     <Content Include="Result_Teacher.aspx" />
@@ -139,6 +139,7 @@
     <Content Include="Student_reg_login.aspx" />
     <Content Include="style.css" />
     <Content Include="Teacher_login.aspx" />
+    <Content Include="thumbnail.png" />
     <Content Include="videos\sbm-bachkground.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -266,7 +267,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Uploads\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

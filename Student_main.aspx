@@ -27,9 +27,8 @@
         }
 
    
-
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
         body {
@@ -89,12 +88,24 @@
         .take-quiz-btn:hover {
             opacity: 0.8;
         }
+
+    #lblMessage {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f2f2f2;
+        color: #333;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+    }
+
     </style>
 </head>
 <body>
 
     <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+    <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
 
 </div>
 
@@ -104,10 +115,16 @@
         </div>
         <div class="center-content">
             <asp:Button ID="Button1" runat="server" CssClass="logout-btn" OnClick="Button1_Click" Text="Logout" />
+
         </div>
+
         <div class="center-content">
+                            <asp:Label ID="lblMessage" runat="server" Text="" Visible="false"></asp:Label>
+
          <asp:GridView ID="GridView1" CssClass="grid-view" runat="server" AutoGenerateColumns="false" OnRowCommand="GridView1_RowCommand">
-    <Columns>
+
+             <Columns>
+
         <asp:BoundField DataField="qid" HeaderText="" Visible="false" />
         <asp:BoundField DataField="name" HeaderText="Quiz Name" Visible="True" />
         <asp:BoundField DataField="time" HeaderText="" Visible="false" />
@@ -118,9 +135,13 @@
             </ItemTemplate>
         </asp:TemplateField>
     </Columns>
+
 </asp:GridView>
 
+
         </div>
+
     </form>
+
 </body>
 </html>

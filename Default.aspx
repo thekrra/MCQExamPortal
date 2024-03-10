@@ -12,6 +12,12 @@
 
     <style>
 
+        
+.logo {
+    width: 40%; /* Adjust logo width */
+    height: auto;
+}
+
         /* Choose User button */
 .user-button {
     background-color: rgba(7, 135, 198, 0.7); /* Blue with transparency */
@@ -54,22 +60,30 @@
 .content {
     margin-top: 9%; /* This should be equal to or greater than the height of your fixed header */
 }
-.logo {
-    width: 8%; /* Adjust logo width */
-    height: auto;
+
+
+#bgPicture {
+  position: fixed; /* Fixed or absolute positioning */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 5%;
+  width: 100%; 
+  height: 100%;
+  z-index: -100; /* Keep the image behind other elements */
+  background: url('images/thumbnail.png') no-repeat center center;
+background-size: 100% 50%; /* Full width, 50% of the element's height */
+  overflow: hidden;
 }
 
-        #bgVideo {
-    position: fixed; /* Use absolute positioning for older IE support */
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto; 
-    height: auto; 
-    z-index: -100; /* Keep the video behind other elements */
-    background-size: cover;
+
+#bgPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the div without stretching the image */
 }
+
 
 body, html {
     height: 100%;
@@ -123,7 +137,7 @@ body, html {
 <body>
 
        <div class="fixed-header">
-       <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+       <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
    </div>
 
 <div class="content">
@@ -132,12 +146,7 @@ body, html {
     </center>
 </div>
    
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="bgVideo">
-    <source src="videos/sbm-bachkground.mp4" type="video/mp4">
-    <!-- Add other video formats here for better compatibility -->
-    Your browser does not support the video tag.
-</video>
-    
+
 
   <!-- White panel on the left -->
     <div class="left-panel"></div>

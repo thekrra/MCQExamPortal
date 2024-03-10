@@ -72,10 +72,9 @@ input[type=text], input[type=password] {
 }
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
-
 .back-button {
     position: absolute;
     left: 10px; /* Adjust as needed */
@@ -122,18 +121,15 @@ input[type=text], input[type=password] {
         background-color: #045e8a;
     }
 
+
     </style>
 </head>
 
 <body>
-
-    
-    <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
-<button onclick="history.back()" class="back-button"><i ></i></button>
-
-    </div>
-
+     <div class="fixed-header">
+     <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo"/>
+         <button onclick="history.back()" class="back-button"><i ></i></button>
+         </div>
 
 <div class="content">
         <center>
@@ -152,130 +148,138 @@ input[type=text], input[type=password] {
 
                 <div class="form-group">
 
-                <label for="txtFullName">Full Name:</label>
+                <label for="txtFullName">Full Name:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtFullName" runat="server"   placeholder="Please Enter Full Name"></asp:TextBox>
                 <br />
-            <asp:RequiredFieldValidator ControlToValidate="txtFullName" ErrorMessage="Full Name is required" runat="server" ForeColor="Red" />
+            <asp:RequiredFieldValidator ControlToValidate="txtFullName" ErrorMessage="Please enter your full name." runat="server" ForeColor="Red" />
 
                 <br />
 
-                <label for="txtEmail">Email:</label>
+                <label for="txtEmail">Email:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter Email Address"></asp:TextBox>
                                 <br />
 
-               <asp:Label ID="lblerroremail" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtEmail" ErrorMessage="Please enter your email." runat="server" ForeColor="Red" />
 
                 <br />
 
-                <label for="txtPassword">Password:</label>
+                <label for="txtPassword">Password:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" placeholder="****"></asp:TextBox>
                             <br />
 
-                <asp:Label ID="lblerrorpassword" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtPassword" ErrorMessage="Please enter your password." runat="server" ForeColor="Red" />
 
                 <br />
 
-                <label for="txtPhone">Phone:</label>
+                <label for="txtPhone">Phone:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtPhone" runat="server" placeholder="Enter Phone Number"></asp:TextBox>
                             <br />
-                    <asp:Label ID="lblerrorphone" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtPhone" ErrorMessage="Please enter your phone number." runat="server" ForeColor="Red" />
                 <br />
 
                   <div>
-                 <label for="txtGender">Gender:</label>
+
+                      <script type="text/javascript">
+                        function validateGender(sender, args) {
+                    args.IsValid = document.getElementById('<%= male.ClientID %>').checked || document.getElementById('<%= female.ClientID %>').checked;
+                                }
+                      </script>
+
+                 <label for="txtGender">Gender:</label>  <p style="display: inline; color: red;"> *</p>
 
             <asp:RadioButton ID="male" runat="server" GroupName="Gender" Text="Male" />
             <asp:RadioButton ID="female" runat="server" GroupName="Gender" Text="Female" /> 
                                 <br />
 
-                  <asp:Label ID="lblErrorGender" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:CustomValidator ID="CustomValidatorGender" runat="server" ErrorMessage="Please select your gender."
+                  ClientValidationFunction="validateGender" OnServerValidate="CustomValidatorGender_ServerValidate" ForeColor="Red" Display="Dynamic">
+        </asp:CustomValidator>
 
         </div>
+                                                               <br />
 
-                 <br />
+
                 
-                 <label for="txtBirthDate">Birth Date:</label>
+                 <label for="txtBirthDate">Birth Date:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtBirthDate" runat="server" placeholder="Format: DD/MM/YYYY"></asp:TextBox>
                                
                                     <br />
 
-                <asp:Label ID="lblErrorMessage" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtBirthDate" ErrorMessage="Please enter your birth date." runat="server" ForeColor="Red" />
+                    <asp:RegularExpressionValidator ID="regexBirthDateValidator" runat="server"
+    ControlToValidate="txtBirthDate"
+    ErrorMessage="Please enter a date in the format DD/MM/YYYY."
+    ValidationExpression="^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/(19|20)\d\d$"
+    ForeColor="Red" />
+
   <br />
 
 
                 
-                <label for="txtCity">City:</label>
+                <label for="txtCity">City:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtCity" runat="server" placeholder="Enter City Name"></asp:TextBox>
                        <br />
 
-<asp:Label ID="lblerrorcity" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtCity" ErrorMessage="Please enter your city name." runat="server" ForeColor="Red" />
                     <br />
                 
                 
-                <label for="txtUniversity">University:</label>
+                <label for="txtUniversity">University:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtUniversity" runat="server" placeholder="Enter University Name"></asp:TextBox>
                                     <br />
 
-             <asp:Label ID="erroruniversity" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtUniversity" ErrorMessage="Please enter your university name." runat="server" ForeColor="Red" />
 
                 <br />
               
-                <label for="txtMajor">Major:</label>
+                <label for="txtMajor">Major:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtMajor" runat="server" placeholder="Enter Major"></asp:TextBox>
                             <br />
 
-                         <asp:Label ID="errormajor" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtMajor" ErrorMessage="Please enter your major." runat="server" ForeColor="Red" />
                 <br />
                   
-                <label for="txtGrad">Graduation Year:</label>
+                <label for="txtGrad">Graduation Year:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtGrad" runat="server" placeholder="Enter Graduation Year"></asp:TextBox>
                             <br />
 
-                         <asp:Label ID="errorGrad" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtGrad" ErrorMessage="Please enter your graduation year." runat="server" ForeColor="Red" />
                 <br />
                     
-                <label for="txtGPA">GPA (out of):</label>
+                <label for="txtGPA">GPA (out of):</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:TextBox ID="txtGPA" runat="server" placeholder="Eg. 4.5/5"></asp:TextBox>
                             <br />
 
-                     <asp:Label ID="errorGPA" runat="server" Visible="false" CssClass="error-message"></asp:Label>
+            <asp:RequiredFieldValidator ControlToValidate="txtGPA" ErrorMessage="Please enter your GPA." runat="server" ForeColor="Red" />
 
                 <br />
 
 
 
+                <!-- File upload labels
+                     -->
 
-
-
-                <!-- File upload labels -->
-                <label for="fuCV">Attach your CV:</label>
-                <asp:FileUpload ID="fuCV" runat="server" accept=".pdf" />
+                         <label for="fuCV">Attach your CV:</label> <p style="display: inline; color: red;"> *</p>  
+                <asp:FileUpload ID="fuCV" runat="server" accept=".pdf"  />
                             <br />
 
-                         <asp:Label ID="errorcv" runat="server" Visible="false" CssClass="error-message"></asp:Label>
                 <br />
 
-                <label for="fuVideo">Attach a video of you talking about yourself (1 min):</label>
+                <label for="fuVideo">Attach a video of you talking about yourself (1 min):</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:FileUpload ID="fuVideo" runat="server" accept="video/*" />
                                     <br />
 
-                      <asp:Label ID="errorvideo" runat="server" Visible="false" CssClass="error-message"></asp:Label>
-
                 <br />
 
-                <label for="fuTranscript">Attach your academic transcript:</label>
+                <label for="fuTranscript">Attach your academic transcript:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:FileUpload ID="fuTranscript" runat="server" accept=".pdf" />
                             <br />
 
-                   <asp:Label ID="errorAT" runat="server" Visible="false" CssClass="error-message"></asp:Label>
-
                 <br />
-
-                <label for="fuPhoto">Attach your personal photo:</label>
+                     
+                <label for="fuPhoto">Attach your personal photo:</label>  <p style="display: inline; color: red;"> *</p>
                 <asp:FileUpload ID="fuPhoto" runat="server" accept="image/*" />
                                 <br />
-
-                    <asp:Label ID="errorPhoto" runat="server" Visible="false" CssClass="error-message"></asp:Label>
 
                 <br />
                
@@ -283,12 +287,7 @@ input[type=text], input[type=password] {
                     <div style="text-align: center;">
                         <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="submit-button" OnClick="btnSubmit_Click" />
                                 <br />
-
-                      <asp:Label ID="Label7" runat="server" Visible="false" CssClass="error-message"></asp:Label>
-
                                            <br />
-
-
                         <asp:Label ID="Label2" runat="server"></asp:Label>
 
 

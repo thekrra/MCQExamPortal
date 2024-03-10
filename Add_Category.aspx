@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Add Category to Quiz</title>
+        <link rel="stylesheet" href="style.css">
+
 
     
     <style>
@@ -39,7 +41,7 @@
  
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
 
@@ -51,7 +53,9 @@
 
         
 <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
+    <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
+    <button onclick="history.back()" class="back-button"><i ></i></button>
+
 
 </div>
     <form id="form1" runat="server">
@@ -74,7 +78,6 @@
                     <h2>Add New Category</h2>
                     <asp:TextBox ID="txtCategoryName" runat="server" placeholder="Category Name"></asp:TextBox>
                     <asp:Button ID="btnAddCategory" runat="server" Text="Add" OnClick="btnAddCategory_Click" />
-                    <asp:LinkButton ID="LinkButton1" PostBackUrl="~/HomeTeacher.aspx" runat="server">Back</asp:LinkButton>
                     <hr />
                     <h2>Category List</h2>
                     <asp:GridView ID="gvCategories" runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnRowEditing="gvCategories_RowEditing" OnRowCancelingEdit="gvCategories_RowCancelingEdit" OnRowUpdating="gvCategories_RowUpdating" OnRowDeleting="gvCategories_RowDeleting">

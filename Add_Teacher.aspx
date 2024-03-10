@@ -40,7 +40,7 @@
  
 
 .logo {
-    width: 8%; /* Adjust logo width */
+    width: 40%; /* Adjust logo width */
     height: auto;
 }
 
@@ -91,8 +91,8 @@
 <body>
 
     <div class="fixed-header">
-    <img src="images/logo.jpg" alt="SBM Logo" class="logo">
-
+    <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
+      <button onclick="history.back()" class="back-button"><i ></i></button>
 </div>
 
     <form id="form1" runat="server">
