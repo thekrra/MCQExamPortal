@@ -66,9 +66,8 @@ namespace MCQExamPortal
                         cmd.Parameters.AddWithValue("@GradYear", txtGrad.Text);
                         cmd.Parameters.AddWithValue("@GPA", txtGPA.Text);
 
+
                         // Get file paths
-
-
                         string cvPath = SaveFileAndGetPath(fuCV);
                         string videoPath = SaveFileAndGetPath(fuVideo);
                         string transcriptPath = SaveFileAndGetPath(fuTranscript);
@@ -84,12 +83,13 @@ namespace MCQExamPortal
                     }
                 }
 
-                Label2.Text = "You’ve registered! <br /> What now? Take a breath and login to do the assessment.";
-                Label2.ForeColor = System.Drawing.Color.Green;
 
-                string script = "setTimeout(function() { window.location.href = 'Student_reg_login.aspx'; }, 5000);";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirectScript", script, true);
-            }  
+                   Label2.Text = "You’ve registered! <br /> What now? Take a breath and login to do the assessment.";
+                    Label2.ForeColor = System.Drawing.Color.Green;
+
+                    string script = "setTimeout(function() { window.location.href = 'Student_reg_login.aspx'; }, 5000);";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "redirectScript", script, true);
+            }
             catch (Exception ex)
             {
                 // Handle exceptions (display an error message or log the exception)
@@ -111,7 +111,7 @@ namespace MCQExamPortal
             if (fileUpload.HasFile)
             {
                 // Specify the directory where you want to save the files
-                string uploadDirectory = Server.MapPath("~/Upload/");
+                string uploadDirectory = Server.MapPath("~/Uploads/");
                 string fileName = Guid.NewGuid().ToString() + "_" + fileUpload.FileName;
                 string filePath = System.IO.Path.Combine(uploadDirectory, fileName);
 

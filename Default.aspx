@@ -137,7 +137,7 @@ body, html {
 <body>
 
        <div class="fixed-header">
-       <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo">
+       <img src="images/sbmacademylogo.png" alt="SBM Logo" class="logo"/>
    </div>
 
 <div class="content">

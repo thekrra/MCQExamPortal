@@ -59,9 +59,7 @@ namespace MCQExamPortal
                 }
                 catch (Exception ex)
                 {
-                    // Log the exception
-                    Label4.Text = "An error occurred while processing your request.";
-                    Label4.ForeColor = System.Drawing.Color.Red;
+                    Response.Write($"Error: {ex.Message}");
                 }
             }
         }
